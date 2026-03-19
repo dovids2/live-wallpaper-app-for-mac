@@ -1,0 +1,568 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		1ED8DE7B2F6C5E5D003EE21B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1ED8DE652F6C5E5B003EE21B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1ED8DE6C2F6C5E5B003EE21B;
+			remoteInfo = "live wallpaper";
+		};
+		1ED8DE852F6C5E5D003EE21B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1ED8DE652F6C5E5B003EE21B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1ED8DE6C2F6C5E5B003EE21B;
+			remoteInfo = "live wallpaper";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1ED8DE6D2F6C5E5B003EE21B /* live wallpaper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "live wallpaper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1ED8DE7A2F6C5E5D003EE21B /* live wallpaperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "live wallpaperTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1ED8DE842F6C5E5D003EE21B /* live wallpaperUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "live wallpaperUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		1ED8DE6F2F6C5E5B003EE21B /* live wallpaper */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "live wallpaper";
+			sourceTree = "<group>";
+		};
+		1ED8DE7D2F6C5E5D003EE21B /* live wallpaperTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "live wallpaperTests";
+			sourceTree = "<group>";
+		};
+		1ED8DE872F6C5E5D003EE21B /* live wallpaperUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "live wallpaperUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1ED8DE6A2F6C5E5B003EE21B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1ED8DE772F6C5E5D003EE21B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1ED8DE812F6C5E5D003EE21B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1ED8DE642F6C5E5B003EE21B = {
+			isa = PBXGroup;
+			children = (
+				1ED8DE6F2F6C5E5B003EE21B /* live wallpaper */,
+				1ED8DE7D2F6C5E5D003EE21B /* live wallpaperTests */,
+				1ED8DE872F6C5E5D003EE21B /* live wallpaperUITests */,
+				1ED8DE6E2F6C5E5B003EE21B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1ED8DE6E2F6C5E5B003EE21B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1ED8DE6D2F6C5E5B003EE21B /* live wallpaper.app */,
+				1ED8DE7A2F6C5E5D003EE21B /* live wallpaperTests.xctest */,
+				1ED8DE842F6C5E5D003EE21B /* live wallpaperUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1ED8DE6C2F6C5E5B003EE21B /* live wallpaper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1ED8DE8E2F6C5E5D003EE21B /* Build configuration list for PBXNativeTarget "live wallpaper" */;
+			buildPhases = (
+				1ED8DE692F6C5E5B003EE21B /* Sources */,
+				1ED8DE6A2F6C5E5B003EE21B /* Frameworks */,
+				1ED8DE6B2F6C5E5B003EE21B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				1ED8DE6F2F6C5E5B003EE21B /* live wallpaper */,
+			);
+			name = "live wallpaper";
+			packageProductDependencies = (
+			);
+			productName = "live wallpaper";
+			productReference = 1ED8DE6D2F6C5E5B003EE21B /* live wallpaper.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1ED8DE792F6C5E5D003EE21B /* live wallpaperTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1ED8DE912F6C5E5D003EE21B /* Build configuration list for PBXNativeTarget "live wallpaperTests" */;
+			buildPhases = (
+				1ED8DE762F6C5E5D003EE21B /* Sources */,
+				1ED8DE772F6C5E5D003EE21B /* Frameworks */,
+				1ED8DE782F6C5E5D003EE21B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1ED8DE7C2F6C5E5D003EE21B /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				1ED8DE7D2F6C5E5D003EE21B /* live wallpaperTests */,
+			);
+			name = "live wallpaperTests";
+			packageProductDependencies = (
+			);
+			productName = "live wallpaperTests";
+			productReference = 1ED8DE7A2F6C5E5D003EE21B /* live wallpaperTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		1ED8DE832F6C5E5D003EE21B /* live wallpaperUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1ED8DE942F6C5E5D003EE21B /* Build configuration list for PBXNativeTarget "live wallpaperUITests" */;
+			buildPhases = (
+				1ED8DE802F6C5E5D003EE21B /* Sources */,
+				1ED8DE812F6C5E5D003EE21B /* Frameworks */,
+				1ED8DE822F6C5E5D003EE21B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1ED8DE862F6C5E5D003EE21B /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				1ED8DE872F6C5E5D003EE21B /* live wallpaperUITests */,
+			);
+			name = "live wallpaperUITests";
+			packageProductDependencies = (
+			);
+			productName = "live wallpaperUITests";
+			productReference = 1ED8DE842F6C5E5D003EE21B /* live wallpaperUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1ED8DE652F6C5E5B003EE21B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2630;
+				LastUpgradeCheck = 2630;
+				TargetAttributes = {
+					1ED8DE6C2F6C5E5B003EE21B = {
+						CreatedOnToolsVersion = 26.3;
+					};
+					1ED8DE792F6C5E5D003EE21B = {
+						CreatedOnToolsVersion = 26.3;
+						TestTargetID = 1ED8DE6C2F6C5E5B003EE21B;
+					};
+					1ED8DE832F6C5E5D003EE21B = {
+						CreatedOnToolsVersion = 26.3;
+						TestTargetID = 1ED8DE6C2F6C5E5B003EE21B;
+					};
+				};
+			};
+			buildConfigurationList = 1ED8DE682F6C5E5B003EE21B /* Build configuration list for PBXProject "live wallpaper" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1ED8DE642F6C5E5B003EE21B;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 1ED8DE6E2F6C5E5B003EE21B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1ED8DE6C2F6C5E5B003EE21B /* live wallpaper */,
+				1ED8DE792F6C5E5D003EE21B /* live wallpaperTests */,
+				1ED8DE832F6C5E5D003EE21B /* live wallpaperUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1ED8DE6B2F6C5E5B003EE21B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1ED8DE782F6C5E5D003EE21B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1ED8DE822F6C5E5D003EE21B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1ED8DE692F6C5E5B003EE21B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1ED8DE762F6C5E5D003EE21B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1ED8DE802F6C5E5D003EE21B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1ED8DE7C2F6C5E5D003EE21B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1ED8DE6C2F6C5E5B003EE21B /* live wallpaper */;
+			targetProxy = 1ED8DE7B2F6C5E5D003EE21B /* PBXContainerItemProxy */;
+		};
+		1ED8DE862F6C5E5D003EE21B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1ED8DE6C2F6C5E5B003EE21B /* live wallpaper */;
+			targetProxy = 1ED8DE852F6C5E5D003EE21B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1ED8DE8C2F6C5E5D003EE21B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 26.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		1ED8DE8D2F6C5E5D003EE21B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 26.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		1ED8DE8F2F6C5E5D003EE21B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "idk.live-wallpaper";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		1ED8DE902F6C5E5D003EE21B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "idk.live-wallpaper";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		1ED8DE922F6C5E5D003EE21B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 26.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "idk.live-wallpaperTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/live wallpaper.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/live wallpaper";
+			};
+			name = Debug;
+		};
+		1ED8DE932F6C5E5D003EE21B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 26.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "idk.live-wallpaperTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/live wallpaper.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/live wallpaper";
+			};
+			name = Release;
+		};
+		1ED8DE952F6C5E5D003EE21B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "idk.live-wallpaperUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "live wallpaper";
+			};
+			name = Debug;
+		};
+		1ED8DE962F6C5E5D003EE21B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "idk.live-wallpaperUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "live wallpaper";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1ED8DE682F6C5E5B003EE21B /* Build configuration list for PBXProject "live wallpaper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1ED8DE8C2F6C5E5D003EE21B /* Debug */,
+				1ED8DE8D2F6C5E5D003EE21B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1ED8DE8E2F6C5E5D003EE21B /* Build configuration list for PBXNativeTarget "live wallpaper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1ED8DE8F2F6C5E5D003EE21B /* Debug */,
+				1ED8DE902F6C5E5D003EE21B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1ED8DE912F6C5E5D003EE21B /* Build configuration list for PBXNativeTarget "live wallpaperTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1ED8DE922F6C5E5D003EE21B /* Debug */,
+				1ED8DE932F6C5E5D003EE21B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1ED8DE942F6C5E5D003EE21B /* Build configuration list for PBXNativeTarget "live wallpaperUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1ED8DE952F6C5E5D003EE21B /* Debug */,
+				1ED8DE962F6C5E5D003EE21B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1ED8DE652F6C5E5B003EE21B /* Project object */;
+}
