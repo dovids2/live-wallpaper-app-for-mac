@@ -17,6 +17,8 @@ class WallpaperManager: NSObject, ObservableObject {
     
     // The local copy used for playback
     private var localURL: URL?
+    
+    var currentSourceURL: URL? { sourceURL }
 
     override init() {
         super.init()

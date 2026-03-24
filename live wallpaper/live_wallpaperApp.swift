@@ -44,9 +44,48 @@ class SettingsManager: NSObject, ObservableObject, NSWindowDelegate {
     }
     
     func windowWillClose(_ notification: Notification) {
-        // Handle the case where the user clicks the red X button or close() is called
-        // Use a slight delay to ensure the window's close sequence has progressed enough
-        // but not so much that we cause a double-release if close() was called manually.
+        self.window?.contentView = nil
+        self.window = nil
+    }
+}
+
+class MainWindowManager: NSObject, ObservableObject, NSWindowDelegate {
+    private var window: NSWindow?
+    private let library: LibraryManager
+    private let wallpaperManager: WallpaperManager
+    
+    init(library: LibraryManager, wallpaperManager: WallpaperManager) {
+        self.library = library
+        self.wallpaperManager = wallpaperManager
+        super.init()
+    }
+    
+    func show() {
+        if let window = window {
+            window.makeKeyAndOrderFront(nil)
+            NSApp.activate(ignoringOtherApps: true)
+            return
+        }
+        
+        let newWindow = NSWindow(
+            contentRect: NSRect(x: 0, y: 0, width: 800, height: 600),
+            styleMask: [.titled, .closable, .miniaturizable, .resizable, .fullSizeContentView],
+            backing: .buffered,
+            defer: false
+        )
+        newWindow.center()
+        newWindow.title = "Live Wallpaper Library"
+        newWindow.isReleasedWhenClosed = false
+        newWindow.delegate = self
+        
+        let view = MainView(library: library, wallpaperManager: wallpaperManager)
+        newWindow.contentView = NSHostingView(rootView: view)
+        newWindow.makeKeyAndOrderFront(nil)
+        NSApp.activate(ignoringOtherApps: true)
+        self.window = newWindow
+    }
+    
+    func windowWillClose(_ notification: Notification) {
         self.window?.contentView = nil
         self.window = nil
     }
@@ -55,7 +94,9 @@ class SettingsManager: NSObject, ObservableObject, NSWindowDelegate {
 @main
 struct live_wallpaperApp: App {
     @StateObject private var wallpaperManager = WallpaperManager()
+    @StateObject private var libraryManager = LibraryManager()
     @StateObject private var settingsManager = SettingsManager()
+    @StateObject private var mainWindowManager: MainWindowManager
     
     @State private var startAtLogin: Bool = {
         return SMAppService.mainApp.status == .enabled
@@ -63,12 +104,25 @@ struct live_wallpaperApp: App {
     
     init() {
         NSApplication.shared.setActivationPolicy(.accessory)
+        
+        let wm = WallpaperManager()
+        let lm = LibraryManager()
+        let mwm = MainWindowManager(library: lm, wallpaperManager: wm)
+        
+        _wallpaperManager = StateObject(wrappedValue: wm)
+        _libraryManager = StateObject(wrappedValue: lm)
+        _mainWindowManager = StateObject(wrappedValue: mwm)
+        
+        // Show the library window on launch
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            mwm.show()
+        }
     }
     
     var body: some Scene {
         MenuBarExtra("Live Wallpaper", systemImage: "desktopcomputer") {
-            Button("Select Video...") {
-                selectVideo()
+            Button("Library...") {
+                mainWindowManager.show()
             }
             Button("Settings...") {
                 settingsManager.show()
@@ -97,20 +151,6 @@ struct live_wallpaperApp: App {
             }
         } catch {
             print("Failed to toggle start at login: \(error)")
-        }
-    }
-    
-    func selectVideo() {
-        let panel = NSOpenPanel()
-        panel.allowedContentTypes = [.movie, .video, .quickTimeMovie]
-        panel.canChooseFiles = true
-        panel.canChooseDirectories = false
-        panel.allowsMultipleSelection = false
-        
-        if panel.runModal() == .OK {
-            if let url = panel.url {
-                wallpaperManager.setVideo(url: url)
-            }
         }
     }
 }
