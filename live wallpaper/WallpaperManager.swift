@@ -9,6 +9,9 @@ class WallpaperManager: NSObject, ObservableObject {
     private var loopers: [AVPlayerLooper] = []
     private var cancellables = Set<AnyCancellable>()
     
+    // Track the last screen configuration to avoid unnecessary re-creation
+    private var lastScreenConfig: String = ""
+    
     // The original source URL (user selected)
     private var sourceURL: URL?
     
@@ -55,14 +58,17 @@ class WallpaperManager: NSObject, ObservableObject {
 
     func applySettings() {
         let opacity = UserDefaults.standard.double(forKey: "wallpaperOpacity")
-        
         for window in windows {
             window.alphaValue = opacity
         }
     }
 
     @objc func screenParametersChanged() {
-        updateWindows()
+        // Only update if the screen configuration actually changed (resolution, number of screens)
+        let currentConfig = NSScreen.screens.map { "\($0.frame)" }.joined(separator: "|")
+        if currentConfig != lastScreenConfig {
+            updateWindows()
+        }
     }
 
     func setVideo(url: URL) {
@@ -101,7 +107,9 @@ class WallpaperManager: NSObject, ObservableObject {
             try fileManager.copyItem(at: url, to: destinationURL)
             self.localURL = destinationURL
             
+            // Force an update when a new video is set
             DispatchQueue.main.async { [weak self] in
+                self?.lastScreenConfig = "" // Reset to force update
                 self?.updateWindows()
             }
         } catch {
@@ -110,6 +118,10 @@ class WallpaperManager: NSObject, ObservableObject {
     }
 
     func updateWindows() {
+        // Record current config
+        let currentConfig = NSScreen.screens.map { "\($0.frame)" }.joined(separator: "|")
+        self.lastScreenConfig = currentConfig
+
         // Stop and clear in safe order
         for player in players {
             player.pause()
@@ -131,16 +143,19 @@ class WallpaperManager: NSObject, ObservableObject {
             let queuePlayer = AVQueuePlayer(playerItem: playerItem)
             let playerLooper = AVPlayerLooper(player: queuePlayer, templateItem: playerItem)
             
-            // Mute the player to save resources and disable audio engine usage
             queuePlayer.isMuted = true
             
             players.append(queuePlayer)
             loopers.append(playerLooper)
             
             let window = WallpaperWindow(screen: screen)
-            let view = VideoPlayerView(player: queuePlayer)
-            window.contentView = NSHostingView(rootView: view)
-            window.orderFront(nil)
+            
+            // Use PlayerView directly - much faster than NSHostingView
+            let view = PlayerView(player: queuePlayer)
+            window.contentView = view
+            
+            // orderBack(nil) puts it at the bottom of its level (.desktopWindow)
+            window.orderBack(nil)
             windows.append(window)
             
             queuePlayer.play()
@@ -152,6 +167,7 @@ class WallpaperManager: NSObject, ObservableObject {
         UserDefaults.standard.removeObject(forKey: "wallpaperBookmark")
         sourceURL = nil
         localURL = nil
+        lastScreenConfig = ""
         
         for player in players {
             player.pause()
