@@ -19,23 +19,16 @@ class WallpaperManager: NSObject, ObservableObject {
     private var localURL: URL?
     
     var currentSourceURL: URL? { sourceURL }
+    
+    var hasPersistedWallpaper: Bool {
+        UserDefaults.standard.data(forKey: "wallpaperBookmark") != nil || 
+        UserDefaults.standard.string(forKey: "wallpaperPath") != nil
+    }
 
     override init() {
         super.init()
         
-        if let savedData = UserDefaults.standard.data(forKey: "wallpaperBookmark") {
-            var isStale = false
-            do {
-                let url = try URL(resolvingBookmarkData: savedData, options: .withSecurityScope, relativeTo: nil, bookmarkDataIsStale: &isStale)
-                if url.startAccessingSecurityScopedResource() {
-                    self.sourceURL = url
-                    self.setupPlaybackFromSource(url: url)
-                    url.stopAccessingSecurityScopedResource()
-                }
-            } catch {
-                print("Failed to resolve bookmark: \(error)")
-            }
-        }
+        loadSavedWallpaper()
         
         // Only observe opacity changes
         NotificationCenter.default.publisher(for: UserDefaults.didChangeNotification)
@@ -51,6 +44,35 @@ class WallpaperManager: NSObject, ObservableObject {
             name: NSApplication.didChangeScreenParametersNotification,
             object: nil
         )
+    }
+    
+    private func loadSavedWallpaper() {
+        // Try bookmark first (safest for both sandboxed and non-sandboxed)
+        if let savedData = UserDefaults.standard.data(forKey: "wallpaperBookmark") {
+            var isStale = false
+            do {
+                // Use empty options for resolving minimal/standard bookmarks
+                let url = try URL(resolvingBookmarkData: savedData, options: [], relativeTo: nil, bookmarkDataIsStale: &isStale)
+                
+                // Security scope access (benign if not sandboxed)
+                _ = url.startAccessingSecurityScopedResource()
+                
+                self.sourceURL = url
+                self.setupPlaybackFromSource(url: url)
+                return
+            } catch {
+                print("Failed to resolve bookmark: \(error). Trying path fallback...")
+            }
+        }
+        
+        // Try path fallback (robust for non-sandboxed environment)
+        if let savedPath = UserDefaults.standard.string(forKey: "wallpaperPath") {
+            let url = URL(fileURLWithPath: savedPath)
+            if FileManager.default.fileExists(atPath: url.path) {
+                self.sourceURL = url
+                self.setupPlaybackFromSource(url: url)
+            }
+        }
     }
     
     deinit {
@@ -83,9 +105,11 @@ class WallpaperManager: NSObject, ObservableObject {
         
         self.sourceURL = url
         
+        // Save both bookmark and absolute path
         do {
             let bookmark = try url.bookmarkData(options: .minimalBookmark, includingResourceValuesForKeys: nil, relativeTo: nil)
             UserDefaults.standard.set(bookmark, forKey: "wallpaperBookmark")
+            UserDefaults.standard.set(url.path, forKey: "wallpaperPath")
         } catch {
             print("Failed to create bookmark: \(error)")
         }
@@ -167,6 +191,7 @@ class WallpaperManager: NSObject, ObservableObject {
     
     func stop() {
         UserDefaults.standard.removeObject(forKey: "wallpaperBookmark")
+        UserDefaults.standard.removeObject(forKey: "wallpaperPath")
         sourceURL = nil
         localURL = nil
         lastScreenConfig = ""

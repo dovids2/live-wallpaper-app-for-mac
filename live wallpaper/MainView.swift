@@ -56,6 +56,37 @@ struct LibraryItemView: View {
 struct MainView: View {
     @ObservedObject var library: LibraryManager
     @ObservedObject var wallpaperManager: WallpaperManager
+    @ObservedObject var appDefaults: AppDefaults
+    
+    @State private var selectedTab: String? = "Library"
+    
+    var body: some View {
+        NavigationSplitView {
+            List(selection: $selectedTab) {
+                NavigationLink(value: "Library") {
+                    Label("Library", systemImage: "photo.on.rectangle")
+                }
+                NavigationLink(value: "Settings") {
+                    Label("Settings", systemImage: "gear")
+                }
+            }
+            .listStyle(.sidebar)
+            .navigationTitle("Live Wallpaper")
+        } detail: {
+            if selectedTab == "Library" {
+                LibraryView(library: library, wallpaperManager: wallpaperManager, appDefaults: appDefaults)
+            } else if selectedTab == "Settings" {
+                SettingsView()
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+            }
+        }
+    }
+}
+
+struct LibraryView: View {
+    @ObservedObject var library: LibraryManager
+    @ObservedObject var wallpaperManager: WallpaperManager
+    @ObservedObject var appDefaults: AppDefaults
     
     let columns = [
         GridItem(.adaptive(minimum: 160, maximum: 160), spacing: 20)
@@ -67,6 +98,16 @@ struct MainView: View {
                 Text("Wallpaper Library")
                     .font(.largeTitle.bold())
                 Spacer()
+                
+                Toggle("Start at Login", isOn: $appDefaults.startAtLogin)
+                    .toggleStyle(.checkbox)
+                    .padding(.trailing)
+                
+                Button(action: wallpaperManager.stop) {
+                    Label("Stop Wallpaper", systemImage: "stop.circle")
+                }
+                .buttonStyle(.bordered)
+                
                 Button(action: importNewVideo) {
                     Label("Import Video", systemImage: "plus.circle.fill")
                 }
@@ -96,7 +137,6 @@ struct MainView: View {
                 .padding()
             }
         }
-        .frame(minWidth: 600, minHeight: 400)
     }
     
     private func importNewVideo() {
